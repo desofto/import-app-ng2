@@ -1,0 +1,32 @@
+<div class="company">
+  <div class="row">
+    <div class="col-md-3">
+      <h4 [class]="'name ' + className()" (click)="toggle()">
+        {{ company.name }}
+      </h4>
+    </div>
+    <div class="col-md-2">
+      Operations: {{ company.operations }}
+    </div>
+    <div class="col-md-2">
+      Avg: {{ company.average_amount }}
+    </div>
+    <div class="col-md-2">
+      Highest: {{ company.highest_operation }}
+    </div>
+    <div class="col-md-2">
+      Accepted: {{ company.accepted }}
+    </div>
+    <div class="col-md-1">
+    </div>
+    <a class="btn btn-default" [href]="'/api/v1/companies/' + company.id + '/operations.csv?filter=' + filter">
+      CSV
+    </a>
+  </div>
+  <div class="row" *ngIf="loading">
+    <div class="col-md-12">
+      <img src="/images/loading-line.gif" />
+    </div>
+  </div>
+  <operations [operations]="operations" [filter]="filter" *ngIf="open"></operations>
+</div>

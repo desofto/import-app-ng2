@@ -1,0 +1,9 @@
+<div class="companies">
+  <filter (changed)="filterUpdated($event)"></filter>
+  <h2 class="title">
+    Companies
+  </h2>
+  <div>
+    <company [company]="company" [filter]="filter" *ngFor="let company of companies"></company>
+  </div>
+</div>

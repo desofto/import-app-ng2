@@ -1,0 +1,17 @@
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*.log
+/tmp
+*.log
+.DS_Store
+.env.*
+config/database.yml
+.idea
+*.dump
+dump.rdb
+
+node_modules
+public/app/**/*.map
+public/app/**/*.js
+typings/*

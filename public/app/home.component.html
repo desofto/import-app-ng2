@@ -1,0 +1,9 @@
+<import-progress [id]="jid" (complete)="resetToken()" *ngIf="jid"></import-progress>
+
+<companies></companies>
+
+<div class="row">
+  <div class="col-md-12">
+    <uploader (uploaded)="storeToken($event)"></uploader>
+  </div>
+</div>

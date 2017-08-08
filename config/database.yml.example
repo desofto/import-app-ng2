@@ -1,0 +1,19 @@
+test: &default
+  adapter: postgresql
+  encoding: unicode
+  database: import_app_ng2_test<%= ENV['TEST_ENV_NUMBER'] %>
+  pool: 16
+  reaping_frequency: 10
+  user: dmitry
+
+production:
+  <<: *default
+  database: import_app_ng2_development
+
+staging:
+  <<: *default
+  database: import_app_ng2_development
+
+development:
+  <<: *default
+  database: import_app_ng2_production
