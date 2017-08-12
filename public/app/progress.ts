@@ -1,4 +1,8 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/switchMap';
+
 import { OperationApi } from './api/operation';
 
 @Component({
@@ -13,17 +17,23 @@ export class Progress implements OnInit {
   info: Object = {}
 
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private operations: OperationApi
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
-    this.setTimer()
+    this.route.params.subscribe((p: any) => {
+      this.id = p.id;
+      this.setTimer();
+    });
   }
 
   private setTimer() {
-    setTimeout( () => {
+    Observable.timer(100).subscribe(() => {
       this.update();
-    }, 100);
+    });
   }
 
   private update() {
@@ -33,11 +43,13 @@ export class Progress implements OnInit {
           if(this.info['status'] != 'complete') {
             this.setTimer();
           } else {
-            this.complete.emit();
+            setTimeout(() => {
+              this.complete.emit();
+              this.router.navigate(['/main']);
+            }, 3000);
           }
         },
         error => console.log(error)
       )
   }
-
 }

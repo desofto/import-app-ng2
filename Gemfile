@@ -18,8 +18,6 @@ gem 'puma'
 
 gem 'pry-rails'
 
-gem 'yarn'
-
 group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', require: false

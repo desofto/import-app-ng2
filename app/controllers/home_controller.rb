@@ -6,7 +6,7 @@ class HomeController < ApplicationController
       format.html do
         if Rails.env.development?
           `rm -r public/app/*.js*`
-          result = `#{Rails.root}/node_modules/.bin/tsc`
+          result = `yarn tsc --silent`
           if result.present?
             render plain: result.split("\n").join("<br />")
             return
