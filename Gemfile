@@ -15,6 +15,7 @@ gem 'grape-entity'
 gem 'csv_builder'
 
 gem 'puma'
+gem 'sass'
 
 gem 'pry-rails'
 

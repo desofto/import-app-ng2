@@ -27,6 +27,7 @@ module Ng2
     # config.i18n.default_locale = :de
 
     config.assets.paths << Rails.root.join('node_modules')
+    config.assets.paths << Rails.root.join('public')
 
     config.assets.enabled = true
 
