@@ -2,8 +2,8 @@
   "name": "rails-ng2",
   "version": "0.0.1",
   "scripts": {
-    "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "build": "tsc -w",
+    "start": "tsc ; rails s -p 3333"
   },
   "license": "MIT",
   "dependencies": {
