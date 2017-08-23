@@ -1,8 +1,8 @@
 <h1 class="title">import demo ng2</h1>
 <nav>
-  <a routerLink="/main" routerLinkActive="active">Home</a>
-  <a [routerLink]="['progress', jid]" routerLinkActive="active">Progress</a>
-  <a routerLink="/upload" routerLinkActive="active">Upload</a>
+  <a md-raised-button routerLink="/main" routerLinkActive="active">Home</a>
+  <a md-raised-button [routerLink]="['progress', jid]" routerLinkActive="active">Progress</a>
+  <a md-raised-button routerLink="/upload" routerLinkActive="active">Upload</a>
 </nav>
 <router-outlet></router-outlet>
 <router-outlet name="popup"></router-outlet>

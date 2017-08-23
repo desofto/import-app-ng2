@@ -1,2 +1,2 @@
 <input type="file" #file placeholder="Upload file" accept=".csv">
-<input type="submit" value="Import" (click)="uploadFile(file.files)">
+<button md-mini-fab (click)="uploadFile(file.files)"><md-icon>check</md-icon></button>

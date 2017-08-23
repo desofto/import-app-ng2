@@ -3,6 +3,9 @@ import { Router }           from '@angular/router';
 import { BrowserModule }    from '@angular/platform-browser';
 import { FormsModule }      from '@angular/forms';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MdInputModule, MdButtonModule, MdCardModule, MdMenuModule, MdToolbarModule, MdIconModule } from '@angular/material';
+
 import { AppRoutingModule } from './app.routing.module';
 
 import { HomeComponent }    from './home.component';
@@ -23,6 +26,16 @@ import { ApiModule }        from './api/module';
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
+
+    //SimpleNotificationsModule.forRoot(),
+    MdInputModule,
+    MdButtonModule,
+    MdMenuModule,
+    MdCardModule,
+    MdToolbarModule,
+    MdIconModule,
+
     AppRoutingModule,
     SharedModule,
     ApiModule
